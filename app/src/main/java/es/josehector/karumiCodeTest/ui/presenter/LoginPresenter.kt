@@ -1,18 +1,15 @@
 package es.josehector.karumiCodeTest.ui.presenter
 
 import es.josehector.karumiCodeTest.data.repository.UserLoginRepository
+import es.josehector.karumiCodeTest.domain.usecase.CheckLoggedUser
 import es.josehector.karumiCodeTest.domain.usecase.Login
 import es.josehector.karumiCodeTest.util.EspressoIdlingResource
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 class LoginPresenter @Inject constructor(
     private val login: Login,
-    private val userLoginRepository: UserLoginRepository
+    private val checkLoggedUser: CheckLoggedUser
 ) : CoroutineScope by MainScope() {
     var view: View? = null
 
@@ -22,6 +19,12 @@ class LoginPresenter @Inject constructor(
 
     fun detachView() {
         this.view = null
+    }
+
+    fun checkLoggedUser() {
+        if (checkLoggedUser.execute()) {
+            view?.navigateToLogout()
+        }
     }
 
     fun doLogin(userName: String, password: String) {
@@ -42,7 +45,6 @@ class LoginPresenter @Inject constructor(
                 when (token) {
                     null -> view?.showLogInErrorMessage()
                     else -> {
-                        userLoginRepository.saveAuthenticationToken(token)
                         view?.navigateToLogout()
                     }
                 }

@@ -1,5 +1,6 @@
 package es.josehector.karumiCodeTest.ui.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -9,6 +10,7 @@ import es.josehector.karumiCodeTest.R
 import es.josehector.karumiCodeTest.ui.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.login_activity.*
 import javax.inject.Inject
+import es.josehector.karumiCodeTest.ui.view.LogoutActivity as LogoutActivity1
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity(), LoginPresenter.View {
@@ -22,6 +24,7 @@ class LoginActivity : AppCompatActivity(), LoginPresenter.View {
 
         initializePresenter()
         initializeLoginButton()
+        presenter.checkLoggedUser()
     }
 
     override fun showLoading() {
@@ -47,8 +50,10 @@ class LoginActivity : AppCompatActivity(), LoginPresenter.View {
     }
 
     override fun navigateToLogout() {
-        // TODO: should go to logout screen
         Toast.makeText(this, getString(R.string.msg_login_correct), Toast.LENGTH_LONG).show()
+        val intent = Intent(this, LogoutActivity1::class.java)
+        startActivity(intent)
+        finish()
     }
 
     override fun onDestroy() {
