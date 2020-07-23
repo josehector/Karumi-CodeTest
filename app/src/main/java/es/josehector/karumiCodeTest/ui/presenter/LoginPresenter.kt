@@ -1,10 +1,13 @@
 package es.josehector.karumiCodeTest.ui.presenter
 
-import es.josehector.karumiCodeTest.data.repository.UserLoginRepository
 import es.josehector.karumiCodeTest.domain.usecase.CheckLoggedUser
 import es.josehector.karumiCodeTest.domain.usecase.Login
 import es.josehector.karumiCodeTest.util.EspressoIdlingResource
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class LoginPresenter @Inject constructor(
