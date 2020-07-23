@@ -3,6 +3,7 @@
     <string name="msg_login_incorrect">Wrong credential</string>
     <string name="bt_validating">Processing...</string>
     <string name="bt_login">Login</string>
+    <string name="bt_logout">Logout</string>
     <string name="et_password">Password</string>
     <string name="et_username">Username</string>
     <string name="iv_logo">Karumi\'s logo</string>

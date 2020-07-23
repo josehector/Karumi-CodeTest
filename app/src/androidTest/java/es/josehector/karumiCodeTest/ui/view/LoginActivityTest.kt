@@ -1,17 +1,16 @@
 package es.josehector.karumiCodeTest.ui.view
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
-import androidx.test.espresso.action.ViewActions.replaceText
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
+import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import es.josehector.karumiCodeTest.R
 import es.josehector.karumiCodeTest.ToastMatcher
 import es.josehector.karumiCodeTest.util.EspressoIdlingResource
@@ -31,6 +30,7 @@ class LoginActivityTest {
 
     @Before
     fun setUp() {
+        clearSharedPreferences()
         ActivityScenario.launch(LoginActivity::class.java)
         IdlingRegistry.getInstance().register(EspressoIdlingResource.countingIdlingResource)
     }
@@ -72,6 +72,7 @@ class LoginActivityTest {
 
         onView(withText(R.string.msg_login_correct)).inRoot(ToastMatcher())
             .check(matches(isDisplayed()))
+        onView(withId(R.id.bt_logout)).check(matches(isDisplayed()))
     }
 
     @Test
@@ -81,5 +82,18 @@ class LoginActivityTest {
         onView(withId(R.id.bt_login)).perform(click())
 
         onView(withId(R.id.tv_error)).check(matches(withText(R.string.msg_login_incorrect)))
+    }
+
+    private fun getEditorSharedPreferences(): SharedPreferences.Editor {
+        val targetContext: Context = getInstrumentation().targetContext
+        return targetContext.getSharedPreferences("USER_LOGIN_PREFRENCES", Context.MODE_PRIVATE)
+            .edit()
+    }
+
+    private fun clearSharedPreferences() {
+        val editor =
+            getEditorSharedPreferences()
+        editor.clear()
+        editor.commit()
     }
 }
