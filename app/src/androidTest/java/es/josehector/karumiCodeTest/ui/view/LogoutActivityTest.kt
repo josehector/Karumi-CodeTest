@@ -38,5 +38,4 @@ class LogoutActivityTest {
         onView(withId(R.id.et_password)).check(matches(isDisplayed()))
         onView(withId(R.id.bt_login)).check(matches(isDisplayed()))
     }
-
 }
