@@ -3,14 +3,13 @@ This project is part of a Karumi's hiring process which try to show our skills i
 
 ## Getting started
 This repository contain a simple login/logut Android app, written in Kotlin (the new JetBrains language). This development must follow a guidelines from Karumi's team in order to know our skills.
+
 ![Login](/screenshots/login.jpg?raw=true "Login")
 ![Logout](/screenshots/logout.jpg?raw=true "Logout")
 
-*Credentials:
+Credentials:
 
-Username: admin@admin.es
-
-Password: admin*
+*Username: admin@admin.es,Password: admin*
 
 ## Tecnical details
 ### Architecture
