@@ -73,7 +73,7 @@ android {
             def project = "karumi_codetest"
             def versionName = variant.versionName
             def formattedDate = new Date().format("yyyyMMddHHmmSS")
-            def newApkName = project + '-' + versionName + '(' + formattedDate + ')'
+            def newApkName = project + '-' + versionName + '(' + formattedDate + ').apk'
 
             output.outputFileName = new File(newApkName)
         }
