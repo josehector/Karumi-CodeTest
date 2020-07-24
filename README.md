@@ -9,7 +9,9 @@ This repository contain a simple login/logut Android app, written in Kotlin (the
 
 Credentials:
 
-*Username: admin@admin.es,Password: admin*
+*Username: admin@admin.es*
+
+*Password: admin*
 
 ## Tecnical details
 ### Architecture
@@ -21,7 +23,7 @@ In order to guarantee the correct architecture, we have adopted a clean architec
 * **util**: this layer contain utility classes needed in the project.
 
 ### Code Quality
-In order to guarantee the quality of the project, we have adopted a Espresso framework for UI test.
+In order to guarantee the quality of the project, we have adopted a Espresso framework for UI tests.
 Also, to improve this quality, we have used a static code analysis tool for Kotlin called Ktlint (https://ktlint.github.io/). To analyze the code we can execute the next gradle command:
 ```
 $ ./gradlew ktlint
