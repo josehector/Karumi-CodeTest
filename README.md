@@ -7,7 +7,9 @@ This repository contain a simple login/logut Android app, written in Kotlin (the
 ![Logout](/screenshots/logout.jpg?raw=true "Logout")
 
 *Credentials:
+
 Username: admin@admin.es
+
 Password: admin*
 
 ## Tecnical details
