@@ -5,6 +5,7 @@ This project is part of a Karumi's hiring process which try to show our skills i
 This repository contain a simple login/logut Android app, written in Kotlin (the new JetBrains language). This development must follow a guidelines from Karumi's team in order to know our skills.
 ![Login](/screenshots/login.jpg?raw=true "Login")
 ![Logout](/screenshots/logout.jpg?raw=true "Logout")
+
 *Credentials:
 Username: admin@admin.es
 Password: admin*
@@ -12,8 +13,8 @@ Password: admin*
 ## Tecnical details
 ### Architecture
 In order to guarantee the correct architecture, we have adopted a clean architecture (https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), where we have divided this app in different layers. These layers are:
-* **data**: this layer contain repositories and services
-* **di**: this layer contain clases related to Dependency Injection (we will describe it below)
+* **data**: this layer contain repositories and services. In this layer we have created a fake login services.
+* **di**: this layer contain classes related to Dependency Injection (we will describe it below).
 * **domain**: this layer contain, mainly, app's use cases (application specific business rules), but it could contain domain's classes (business entities). 
 * **ui**: this layer contain everything about presentation layer. We have used a MVP pattern (Model View Presenter) because it helps our to separate view from business logic, and also improve testing.  
 * **util**: this layer contain utility classes needed in the project.
