@@ -5,6 +5,9 @@ This project is part of a Karumi's hiring process which try to show our skills i
 This repository contain a simple login/logut Android app, written in Kotlin (the new JetBrains language). This development must follow a guidelines from Karumi's team in order to know our skills.
 ![Login](/screenshots/login.jpg?raw=true "Login")
 ![Logout](/screenshots/logout.jpg?raw=true "Logout")
+*Credentials:
+Username: admin@admin.es
+Password: admin*
 
 ## Tecnical details
 ### Architecture
@@ -17,7 +20,7 @@ In order to guarantee the correct architecture, we have adopted a clean architec
 
 ### Code Quality
 In order to guarantee the quality of the project, we have adopted a Espresso framework for UI test.
-Also, to improve this quality, we have adopted a static code analysis tool for Kotlin called Ktlint (https://ktlint.github.io/). To analyze the code we can execute the next gradle command:
+Also, to improve this quality, we have used a static code analysis tool for Kotlin called Ktlint (https://ktlint.github.io/). To analyze the code we can execute the next gradle command:
 ```
 $ ./gradlew ktlint
 ``` 
@@ -33,6 +36,6 @@ In this project we have used 2 trendy frameworks inside Android community. These
 * **Hilt**: this trendy framework (in alpha version) is used to incorporate dependency injection into app. This helps us for testing, among other things (https://dagger.dev/hilt/). 
  
 ### Continuous integration 
-In continuous integration section, we have used a GitHub Actions tools. This tools let us configure a workflow which create a final artifact.  
+In continuous integration section, we have used a GitHub Actions tools. This tools let us configure a workflow which create a final artifact (apk).  
 
 
