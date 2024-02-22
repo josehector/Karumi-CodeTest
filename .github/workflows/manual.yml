@@ -16,9 +16,12 @@ on:
         - uat
         - prod
       Description:
+        description: Notes
         required: true
       Tester:
+        description: Testers
       Group:
+        description: Groups
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
