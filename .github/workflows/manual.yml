@@ -36,7 +36,7 @@ jobs:
           echo "Entorno: $ENTORNO"
           echo "Description: $DESCRIPTION"
           echo "Tester: $TESTER"
-          echo "Group: $GROUP
+          echo "Group: $GROUP"
         env:
           ENTORNO: ${{inputs.name}}
           DESCRIPTION: ${{inputs.Description}}
