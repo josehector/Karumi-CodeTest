@@ -10,17 +10,15 @@ on:
     inputs:
       name:
         type: choice
-        description: Who to greet
+        description: Entorno
         options: 
-        - monalisa
-        - cschleiden
-      message:
+        - dev
+        - uat
+        - prod
+      Description:
         required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
-      environment:
-        type: environment
+      Tester:
+      Group:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
